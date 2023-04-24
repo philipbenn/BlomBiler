@@ -6,8 +6,18 @@ public class Customer {
     private String customer_last_name;
     private String customer_password;
 
+    private String customer_email;
+
     public Customer() {
 
+    }
+
+    public String getCustomer_email() {
+        return customer_email;
+    }
+
+    public void setCustomer_email(String customer_email) {
+        this.customer_email = customer_email;
     }
 
     public int getCustomer_id() {

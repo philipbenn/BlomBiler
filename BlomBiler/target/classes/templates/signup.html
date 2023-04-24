@@ -10,29 +10,35 @@
 <body>
 <section>
     <div style="height: 600px;" class="form-box">
-        <form>
+        <form method="post" th:action="@{/signupcustomer}">
             <h2>Signup</h2>
             <div class="inputbox">
                 <ion-icon name="person-outline"></ion-icon>
-                <input style="margin-left: 65px;" type="text" required>
+                <input style="margin-left: 65px;" name="customer_first_name" type="text" required>
                 <label>First name :</label>
             </div>
             <div class="inputbox">
                 <ion-icon name="person-outline"></ion-icon>
-                <input style="margin-left: 65px;" type="text" required>
+                <input style="margin-left: 65px;" type="text" name="customer_last_name" required>
                 <label>Last name :</label>
             </div>
+                <div class="inputbox">
+                    <ion-icon name="person-outline"></ion-icon>
+                    <input style="margin-left: 60px; font-size: 25px;" name="customer_username" type="text" required>
+                    <label>Username :</label>
+                </div>
+
             <div class="inputbox">
                 <ion-icon name="mail-outline"></ion-icon>
-                <input type="email" required>
+                <input type="email" name="customer_email" required>
                 <label>Email :</label>
             </div>
             <div class="inputbox">
                 <ion-icon name="lock-closed-outline"></ion-icon>
-                <input style="margin-left: 60px; font-size: 25px;" type="password" required>
+                <input style="margin-left: 60px; font-size: 25px;" name="customer_password" type="password" required>
                 <label>Password :</label>
             </div>
-            <button>Sign up</button>
+            <button type="submit">Sign up</button>
         </form>
     </div>
 </section>
