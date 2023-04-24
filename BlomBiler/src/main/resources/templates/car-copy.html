@@ -119,7 +119,7 @@
 
 <!-- Nice Picture Under The Nav -->
 <a style="text-decoration: none;" href="#sortNav">
-  <div style="display: flex; align-items: end; justify-content: end; box-shadow: 2px 2px px rgba(0, 0, 0, 0.3);
+  <div style="display: flex; align-items: end; justify-content: end; box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
     width: 100%; height: 90%; background-image: url('https://sparmsdc-static.s3.amazonaws.com/uploads/2017/12/tetravue-landing-page.jpg'); background-size: cover; background-position: center;">
     <h2 style="margin-top: 0; margin-bottom: 0; text-align: center; background: rgba(0, 0, 0); color: white; padding: 10px;">See Car Selection >></h2>
   </div>
@@ -144,24 +144,27 @@
 <!-- Car Sorting Nav #sortNav -->
 
 <!-- All of the Car Cards Starts here -->
+<!--<div id="container">-->
+
+  <!---->
 <div id="container">
 
-  <!---->
+<div style="display: inline-block" th:each="car : ${getCars}">
   <a href="carpage.html" style="color: black; text-decoration: none;">
     <div class="car-box-container">
       <div class="box-head">
         <div class="box-head-spacer">
-          <span class="box-brand">Alfa Romeo</span>
-          <span class="box-category">Sport</span>
+          <span th:text="${car.brand_name}" class="box-brand"></span>
+          <span th:text="${car.category}" class="box-category"></span>
         </div>
-        <span class="box-fueltype" style="background: rgb(128, 0, 0);">Benzin</span>
+        <span th:text="${car.fuel_type}" class="box-fueltype" style="background: rgb(128, 0, 0);"></span>
       </div>
-      <h1 class="modelname">Giulia Quadrifoglio</h1>
-      <img class="box-img" src="https://hips.hearstapps.com/hmg-prod/images/2023-alfa-romeo-giulia-quadrifoglio-101-1667326905.jpg?crop=0.766xw:0.647xh;0.0385xw,0.216xh&resize=1200:*" alt="grå audi">
+      <h1 th:text="${car.model_name}" class="modelname"></h1>
+      <img th:src="${car.car_image}" class="box-img">
       <div class="car-box-price-info-container">
         <div class="car-box-price-info">
-          <div><h4>Mdl. ydelse fra</h4><h3>7000,-</h3></div>
-          <div><h4>Udebetaling fra</h4><h3>99000,-</h3></div>
+          <div><h4>Mdl. ydelse fra</h4><h3 th:text="${car.monthly_payment} + kr"></h3></div>
+          <div><h4>Udebetaling fra</h4><h3 th:text="${car.upfront_payment} + kr"></h3></div>
         </div>
       </div>
       <div class="car-box-button-container">
@@ -173,243 +176,12 @@
       </div>
     </div>
   </a>
+</div>
+</div>
   <!---->
 
 
-  <!---->
-  <a href="carpage.html" style="color: black; text-decoration: none;">
-    <div class="car-box-container">
-      <div class="box-head">
-        <div class="box-head-spacer">
-          <span class="box-brand">Lamborghini</span>
-          <span class="box-category">Sport</span>
-        </div>
-        <span class="box-fueltype" style="background: rgb(128, 0, 0);">Benzin</span>
-      </div>
-      <h1 class="modelname">Aventador</h1>
-      <img class="box-img" src="https://hips.hearstapps.com/hmg-prod/images/2022-lamborghini-aventador-109-1625607587.jpg?crop=0.750xw:0.632xh;0.183xw,0.233xh&resize=1200:*" alt="grå audi">
-      <div class="car-box-price-info-container">
-        <div class="car-box-price-info">
-          <div><h4>Mdl. ydelse fra</h4><h3>7000,-</h3></div>
-          <div><h4>Udebetaling fra</h4><h3>99000,-</h3></div>
-        </div>
-      </div>
-      <div class="car-box-button-container">
-        <div class="car-box-button-inner-container">
-          <div class="car-box-inner-inner-container">
-            <h2>Vælg Model</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </a>
-  <!---->
 
-
-  <!---->
-  <a href="carpage.html" style="color: black; text-decoration: none;">
-    <div class="car-box-container">
-      <div class="box-head">
-        <div class="box-head-spacer">
-          <span class="box-brand">Bugatti</span>
-          <span class="box-category">Sport</span>
-        </div>
-        <span class="box-fueltype" style="background: rgb(128, 0, 0);">Benzin</span>
-      </div>
-      <h1 class="modelname">Chiron</h1>
-      <img class="box-img" src="https://hips.hearstapps.com/hmg-prod/images/bugatti-sur-mesure-chiron-pur-sport-106-1639069047.jpg?crop=0.766xw:0.647xh;0.234xw,0.353xh&resize=1200:*" alt="grå audi">
-      <div class="car-box-price-info-container">
-        <div class="car-box-price-info">
-          <div><h4 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Mdl. ydelse fra</h4><h3>7000,-</h3></div>
-          <div><h4>Udebetaling fra</h4><h3>99000,-</h3></div>
-        </div>
-      </div>
-      <div class="car-box-button-container">
-        <div class="car-box-button-inner-container">
-          <div class="car-box-inner-inner-container">
-            <h2>Vælg Model</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </a>
-  <!---->
-
-
-  <!---->
-  <a href="carpage.html" style="color: black; text-decoration: none;">
-    <div class="car-box-container">
-      <div class="box-head">
-        <div class="box-head-spacer">
-          <span class="box-brand">Ferrari</span>
-          <span class="box-category">Sport</span>
-        </div>
-        <span class="box-fueltype" style="background: rgb(128, 0, 0);">Benzin</span>
-      </div>
-      <h1 class="modelname">296 GTB
-      </h1>
-      <img class="box-img" src="https://hips.hearstapps.com/hmg-prod/images/2022-ferrari-296gtb-assetto-fiorano-105-1646595950.jpg?crop=0.730xw:0.616xh;0.103xw,0.298xh&resize=1200:*" alt="grå audi">
-      <div class="car-box-price-info-container">
-        <div class="car-box-price-info">
-          <div><h4>Mdl. ydelse fra</h4><h3>7000,-</h3></div>
-          <div><h4>Udebetaling fra</h4><h3>99000,-</h3></div>
-        </div>
-      </div>
-      <div class="car-box-button-container">
-        <div class="car-box-button-inner-container">
-          <div class="car-box-inner-inner-container">
-            <h2>Vælg Model</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </a>
-  <!---->
-
-  <!---->
-  <a href="carpage.html" style="color: black; text-decoration: none;">
-    <div class="car-box-container">
-      <div class="box-head">
-        <div class="box-head-spacer">
-          <span class="box-brand">Aston Martin</span>
-          <span class="box-category">Sport</span>
-        </div>
-        <span class="box-fueltype" style="background: rgb(128, 0, 0);">Benzin</span>
-      </div>
-      <h1 class="modelname">DB11 AMR</h1>
-      <img class="box-img" src="https://hips.hearstapps.com/hmg-prod/images/2018-aston-martin-db11-amr-156-1525983030.jpg?crop=0.668xw:0.615xh;0.115xw,0.272xh&resize=1200:*" alt="grå audi">
-      <div class="car-box-price-info-container">
-        <div class="car-box-price-info">
-          <div><h4>Mdl. ydelse fra</h4><h3>7000,-</h3></div>
-          <div><h4>Udebetaling fra</h4><h3>99000,-</h3></div>
-        </div>
-      </div>
-      <div class="car-box-button-container">
-        <div class="car-box-button-inner-container">
-          <div class="car-box-inner-inner-container">
-            <h2>Vælg Model</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </a>
-  <!---->
-
-  <!---->
-  <a href="carpage.html" style="color: black; text-decoration: none;">
-    <div class="car-box-container">
-      <div class="box-head">
-        <div class="box-head-spacer">
-          <span class="box-brand">Koenigsegg</span>
-          <span class="box-category">Sport</span>
-        </div>
-        <span class="box-fueltype" style="background: rgb(128, 0, 0);">Benzin</span>
-      </div>
-      <h1 class="modelname">Jesko </h1>
-      <img class="box-img" src="https://hips.hearstapps.com/hmg-prod/images/koenigsegg-jesko-101-1551799580.jpg?crop=1.00xw:0.929xh;0,0.0288xh&resize=1200:*" alt="grå audi">
-      <div class="car-box-price-info-container">
-        <div class="car-box-price-info">
-          <div><h4>Mdl. ydelse fra</h4><h3>7000,-</h3></div>
-          <div><h4>Udebetaling fra</h4><h3>99000,-</h3></div>
-        </div>
-      </div>
-      <div class="car-box-button-container">
-        <div class="car-box-button-inner-container">
-          <div class="car-box-inner-inner-container">
-            <h2>Vælg Model</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </a>
-  <!---->
-
-  <!---->
-  <a href="carpage.html" style="color: black; text-decoration: none;">
-    <div class="car-box-container">
-      <div class="box-head">
-        <div class="box-head-spacer">
-          <span class="box-brand">Maserati</span>
-          <span class="box-category">Sport</span>
-        </div>
-        <span class="box-fueltype" style="background: rgb(128, 0, 0);">Benzin</span>
-      </div>
-      <h1 class="modelname">GranTurismo 2024</h1>
-      <img class="box-img" src="https://hips.hearstapps.com/hmg-prod/images/2023-maserati-granturismo-modena-7-1676302719.jpg?crop=0.527xw:0.527xh;0.280xw,0.444xh&resize=1200:*" alt="grå audi">
-      <div class="car-box-price-info-container">
-        <div class="car-box-price-info">
-          <div><h4>Mdl. ydelse fra</h4><h3>7000,-</h3></div>
-          <div><h4>Udebetaling fra</h4><h3>99000,-</h3></div>
-        </div>
-      </div>
-      <div class="car-box-button-container">
-        <div class="car-box-button-inner-container">
-          <div class="car-box-inner-inner-container">
-            <h2>Vælg Model</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </a>
-  <!---->
-
-  <!---->
-  <a href="carpage.html" style="color: black; text-decoration: none;">
-    <div class="car-box-container">
-      <div class="box-head">
-        <div class="box-head-spacer">
-          <span class="box-brand">Bentley</span>
-          <span class="box-category">Luxury</span>
-        </div>
-        <span class="box-fueltype" style="background: rgb(128, 0, 0);">Benzin</span>
-      </div>
-      <h1 class="modelname">Continental GT Speed</h1>
-      <img class="box-img" src="https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/wp-content/uploads/2015/06/2016-Bentley-Continental-GT-Speed-101.jpg?crop=1.00xw:0.924xh;0,0.0761xh&resize=1200:*" alt="grå audi">
-      <div class="car-box-price-info-container">
-        <div class="car-box-price-info">
-          <div><h4>Mdl. ydelse fra</h4><h3>7000,-</h3></div>
-          <div><h4>Udebetaling fra</h4><h3>99000,-</h3></div>
-        </div>
-      </div>
-      <div class="car-box-button-container">
-        <div class="car-box-button-inner-container">
-          <div class="car-box-inner-inner-container">
-            <h2>Vælg Model</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </a>
-  <!---->
-
-  <!---->
-  <a href="carpage.html" style="color: black; text-decoration: none;">
-    <div class="car-box-container">
-      <div class="box-head">
-        <div class="box-head-spacer">
-          <span class="box-brand">Rolls Royce</span>
-          <span class="box-category">Luxury</span>
-        </div>
-        <span class="box-fueltype" style="background: rgb(128, 0, 0);">Benzin</span>
-      </div>
-      <h1 class="modelname">Ghost</h1>
-      <img class="box-img" src="https://hips.hearstapps.com/hmg-prod/images/2023-rolls-royce-black-badge-101-1673365072.jpeg?crop=0.945xw:0.799xh;0.0375xw,0.103xh&resize=1200:*" alt="grå audi">
-      <div class="car-box-price-info-container">
-        <div class="car-box-price-info">
-          <div><h4>Mdl. ydelse fra</h4><h3>7000,-</h3></div>
-          <div><h4>Udebetaling fra</h4><h3>99000,-</h3></div>
-        </div>
-      </div>
-      <div class="car-box-button-container">
-        <div class="car-box-button-inner-container">
-          <div class="car-box-inner-inner-container">
-            <h2>Vælg Model</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </a>
-  <!---->
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
