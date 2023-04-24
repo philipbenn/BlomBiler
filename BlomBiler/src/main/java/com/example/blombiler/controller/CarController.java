@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -25,9 +25,7 @@ public class CarController {
 
     @GetMapping("/car-page")
     public String carPage(Model model) {
-        List<String> features = Arrays.asList(carService.getCar(5).getCar_feature().split(";"));
-
-
+        List<String> features = Arrays.asList(carService.getCar(5).getCar_feature().split("_"));
         model.addAttribute("features", features);
         return "carpage";
     }
