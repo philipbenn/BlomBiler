@@ -14,4 +14,8 @@ public class CustomerService {
     public void addCustomerAccount(Customer customer){
         customerRepo.addCustomerAccount(customer);
     }
+
+    public Customer logIn(String customer_email, String customer_password){
+        return customerRepo.logIn(customer_email, customer_password);
+    }
 }
