@@ -7,8 +7,18 @@ public class Employee {
     private String employee_last_name;
     private String employee_password;
 
+    private String employee_email;
+
     public Employee() {
 
+    }
+
+    public String getEmployee_email() {
+        return employee_email;
+    }
+
+    public void setEmployee_email(String employee_email) {
+        this.employee_email = employee_email;
     }
 
     public int getEmployee_id() {
