@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,9 +25,12 @@ public class CarController {
         return "car-copy";
     }
 
-    @GetMapping("/car-page")
-    public String carPage(Model model) {
-        List<String> features = Arrays.asList(carService.getCar(5).getCar_feature().split("_"));
+    @PostMapping("/car-page")
+    public String carPage(Model model, @RequestParam int car_id) {
+        Car car = carService.getCar(car_id);
+        model.addAttribute("car", car);
+        List<String> features = Arrays.asList(carService.getCar(car.getCar_id()).getCar_feature().split("_"));
+
         model.addAttribute("features", features);
         return "carpage";
     }

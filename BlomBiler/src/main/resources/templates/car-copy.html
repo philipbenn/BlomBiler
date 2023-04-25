@@ -150,7 +150,10 @@
 <div id="container">
 
 <div style="display: inline-block" th:each="car : ${getCars}">
-  <a href="carpage.html" style="color: black; text-decoration: none;">
+
+  <form action="car-page" method="post">
+    <input type="hidden" name="car_id" th:value="${car.car_id}">
+    <button type="submit">
     <div class="car-box-container">
       <div class="box-head">
         <div class="box-head-spacer">
@@ -175,7 +178,8 @@
         </div>
       </div>
     </div>
-  </a>
+    </button>
+  </form>
 </div>
 </div>
   <!---->
