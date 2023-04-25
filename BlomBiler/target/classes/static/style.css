@@ -116,3 +116,30 @@ button{
 .register p a:hover{
     text-decoration: underline;
 }
+
+#login {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    width: 1000px;
+    height: 20px;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+#login button {
+    background: linear-gradient(177deg, rgba(75,75,75,1) 0%, rgba(152,154,154,1) 87%);
+    color: white;
+    border-radius: .3rem;
+    width: 175px;
+    height: 50px;
+    border: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 10px;
+}
